@@ -51,3 +51,25 @@ void PixelWorld::render() {
   SDL_Rect r = {m_x, m_y, (int)(m_width * m_scale), (int)(m_height * m_scale)};
   SDL_RenderCopy(m_renderer.get(), m_texture, NULL, &r);
 }
+
+bool PixelWorld::save(const std::string &filename) {
+  std::vector<unsigned char> image;
+  image.resize(m_width * m_height * 4);
+
+  int index = 0;
+  for (unsigned y = 0; y < m_height; y++) {
+    for (unsigned x = 0; x < m_width; x++) {
+      image[4 * m_width * y + 4 * x + 0] = (m_pixels[index] >> 24) & 0xff;
+      image[4 * m_width * y + 4 * x + 1] = (m_pixels[index] >> 16) & 0xff;
+      image[4 * m_width * y + 4 * x + 2] = (m_pixels[index] >> 8) & 0xff;
+      image[4 * m_width * y + 4 * x + 3] = 255;
+      index++;
+    }
+  }
+
+  unsigned error = lodepng::encode(filename, image, m_width, m_height);
+
+  if (error) return false;
+
+  return true;
+}
