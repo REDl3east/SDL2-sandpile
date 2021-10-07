@@ -7,7 +7,7 @@ static constexpr int WORLD_HEIGHT = 500;
 static constexpr const char *APP_NAME = "SDL Sandpile";
 
 int main(int argc, char *argv[]) {
-  if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+  if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
     SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't initialize SDL: %s", SDL_GetError());
     return 1;
   }
