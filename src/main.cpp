@@ -8,7 +8,7 @@ static constexpr const char *APP_NAME = "SDL Sandpile";
 
 int main(int argc, char *argv[]) {
   if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
-    SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't initialize SDL: %s", SDL_GetError());
+    std::cout << "Failed to initialize SDL: " << SDL_GetError() << "\n";
     return 1;
   }
 
@@ -25,11 +25,16 @@ int main(int argc, char *argv[]) {
   }
   Sandpile world(renderer, INITIAL_WINDOW_WIDTH, INITIAL_WINDOW_HEIGHT, WORLD_WIDTH, WORLD_HEIGHT);
 
-  for (int i = 0; i < world.width(); i++) {
-    for (int j = 0; j < world.height(); j++) {
-      world.add_sand(i, j, 10);
-    }
-  }
+  world.set_colors(
+    {.r = 255, .g = 255, .b = 255}, // 0 grains
+    {.r = 0,   .g = 255, .b = 0},   // 1 grains
+    {.r = 128, .g = 0,   .b = 128}, // 2 grains
+    {.r = 255, .g = 215, .b = 0},   // 3 grains
+    {.r = 255, .g = 255, .b = 255}  // > 3 grains
+  );
+
+  world.add_sand(world.width()/2, world.height() / 2, 1000000);
+
 
   world.start(6);
   world.join();

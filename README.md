@@ -25,6 +25,17 @@ Initialize the sandpile by placing sand wherever you please. This example places
 world.add_sand(world.width() / 2, world.height() / 2, 10000);
 ```
 
+If you want to change the default colors, then use:
+``` c++
+world.set_colors(
+  {.r = 255, .g = 255, .b = 255}, // 0 grains
+  {.r = 0,   .g = 255, .b = 0},   // 1 grains
+  {.r = 128, .g = 0,   .b = 128}, // 2 grains
+  {.r = 255, .g = 215, .b = 0},   // 3 grains
+  {.r = 255, .g = 255, .b = 255}  // > 3 grains
+);
+```
+
 When you are ready to run the simulation simply call:
 
 ``` c++
@@ -59,3 +70,7 @@ This will run the simulation with 6 threads. The function 'join' will be called 
 | **left ctrl + click + drag** | pan                                                |
 | **s**                        | save sandpile (saved in current working directory) |
 | **e**                        | enter normal mode                                  |
+
+#### Links
+- [Abelian sandpile](https://en.wikipedia.org/wiki/Abelian_sandpile_model) 
+- [Sandpiles - Numberphile](https://www.youtube.com/watch?v=1MtEUErz7Gg&ab_channel=Numberphile)

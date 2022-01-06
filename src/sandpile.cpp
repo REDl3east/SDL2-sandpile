@@ -32,23 +32,23 @@ void Sandpile::set_point(int x, int y, int increment) {
   sandpile[index] += increment;
   switch (sandpile[index]) {
     case 0: {
-      point(x, y, colors[0][0], colors[0][1], colors[0][2]);
+      point(x, y, colors[0].r, colors[0].g, colors[0].b);
       break;
     }
     case 1: {
-      point(x, y, colors[1][0], colors[1][1], colors[1][2]);
+      point(x, y, colors[1].r, colors[1].g, colors[1].b);
       break;
     }
     case 2: {
-      point(x, y, colors[2][0], colors[2][1], colors[2][2]);
+      point(x, y, colors[2].r, colors[2].g, colors[2].b);
       break;
     }
     case 3: {
-      point(x, y, colors[3][0], colors[3][1], colors[3][2]);
+      point(x, y, colors[3].r, colors[3].g, colors[3].b);
       break;
     }
     default: {
-      point(x, y, colors[4][0], colors[4][1], colors[4][2]);
+      point(x, y, colors[4].r, colors[4].g, colors[4].b);
       break;
     }
   }
@@ -184,7 +184,6 @@ void Sandpile::main_input_render(int round) {
 }
 
 void Sandpile::edit_input_render() {
-  std::cout << "entered edit input render\n";
   SDL_Event event;
   bool stop = false;
   while (!stop) {
@@ -260,7 +259,6 @@ void Sandpile::edit_input_render() {
 
     SDL_RenderPresent(m_renderer.get());
   }
-  std::cout << "exited edit input render\n";
 }
 
 bool Sandpile::save_sandpile() {
