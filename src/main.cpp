@@ -2,8 +2,8 @@
 
 static constexpr int INITIAL_WINDOW_WIDTH = 1280;
 static constexpr int INITIAL_WINDOW_HEIGHT = 720;
-static constexpr int WORLD_WIDTH = 500;
-static constexpr int WORLD_HEIGHT = 500;
+static constexpr int WORLD_WIDTH = 250;
+static constexpr int WORLD_HEIGHT = 250;
 static constexpr const char *APP_NAME = "SDL Sandpile";
 
 int main(int argc, char *argv[]) {
@@ -33,7 +33,11 @@ int main(int argc, char *argv[]) {
     {.r = 255, .g = 255, .b = 255}  // > 3 grains
   );
 
-  world.add_sand(world.width()/2, world.height() / 2, 1000000);
+  for(int i=0;i<world.width();i++){
+    for(int j=0;j<world.height();j++){
+        world.add_sand(i, j, 4);
+    }
+  }
 
 
   world.start(6);
