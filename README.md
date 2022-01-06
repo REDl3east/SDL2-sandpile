@@ -34,18 +34,21 @@ This will run the simulation with 6 threads. The function 'join' will be called 
 
 ##### The sandpile will render and simulation will run.
 
-**scroll wheel**: zoom in/out \
-**click + drag**: pan \
-**p**: pause renderer \
-**s**: save sandpile (save in current working directory) \
-**e**: enter edit mode \
+| Syntax      | Description                                                        |
+| -----------------------------| ------------------------------------------------- |
+| **scroll wheel** | zoom in/out |
+| **click + drag** | pan |
+| **p** | pause renderer |
+| **s** | save sandpile (save in current working directory) |
+| **e** | enter edit mode |
   
 
 #### Edit Mode
 
 ##### The rendering and simulation will pause and clicking on a cell in the simulation will add 1000 sand.
-
-**scroll wheel**: zoom in/out \
-**left ctrl + click + drag**: pan \
-**s**: save sandpile (save in current working directory) \
-**e**: enter normal mode \
+| Syntax      | Description                                                        |
+| -----------------------------| ------------------------------------------------- |
+| **scroll wheel**             | zoom in/out                                       |
+| **left ctrl + click + drag** | pan                                               |
+| **s**                        | save sandpile (save in current working directory) |
+| **e**                        | enter normal mode                                 |
