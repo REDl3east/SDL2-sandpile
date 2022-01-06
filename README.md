@@ -1,5 +1,5 @@
 # SDL2-sandpile
-A multi-threaded [Abelian sandpile](https://en.wikipedia.org/wiki/Abelian_sandpile_model){:target="_blank"} simulation written in C++, using SDL2.
+A multi-threaded [Abelian sandpile](https://en.wikipedia.org/wiki/Abelian_sandpile_model) simulation written in C++, using SDL2.
 
 ### Dependancies
 - A c++20 compiler (for barrier)
