@@ -1,5 +1,5 @@
 # SDL2-sandpile
-A multi-threaded sand-pile simulation written in C++, using SDL2.
+A multi-threaded (Abelian sandpile)[https://en.wikipedia.org/wiki/Abelian_sandpile_model] simulation written in C++, using SDL2.
 
 ### Dependancies
 - A c++20 compiler (for barrier)
@@ -19,14 +19,10 @@ make
 
 Look at the main.cpp file in the src folder. It does boilerplate SDL initialization and creates the sandpile for you easily. Simply change the global variables to set window and sandpile dimensions. 
 
-Initialize the sandpile by placing sand wherever you please. This example places 10 pieces of sand at each cell. Each cell initializes to 0 pieces of sand. You can also use 'world.set_sand(x, y, value)' to set instead of add sand.
+Initialize the sandpile by placing sand wherever you please. This example places 10000 pieces of sand in the middle of the simulation. Each cell initializes to 0 pieces of sand. You can also use 'world.set_sand(x, y, value)' to set instead of add sand.
 
 ``` c++
-for (int i = 0; i < world.width(); i++) {
-  for (int j = 0; j < world.height(); j++) {
-    world.add_sand(i, j, 10);
-  }
-}
+world.add_sand(world.width() / 2, world.height() / 2, 10000);
 ```
 
 When you are ready to run the simulation simply call:
@@ -44,21 +40,22 @@ This will run the simulation with 6 threads. The function 'join' will be called 
 
 ##### The sandpile will render and simulation will run.
 
-| Syntax                         | Description                                       |
-| ------------------------------ | ------------------------------------------------- |
-| **scroll wheel**               | zoom in/out                                       |
-| **click + drag**               | pan                                               |
-| **p**                          | pause renderer                                    |
-| **s**                          | save sandpile (save in current working directory) |
-| **e**                          | enter edit mode                                   |
+| Syntax                         | Description                                        |
+| ------------------------------ | -------------------------------------------------- |
+| **scroll wheel**               | zoom in/out                                        |
+| **click + drag**               | pan                                                |
+| **p**                          | pause renderer                                     |
+| **s**                          | save sandpile (saved in current working directory) |
+| **e**                          | enter edit mode                                    |
   
 
 #### Edit Mode
 
 ##### The rendering and simulation will pause and clicking on a cell in the simulation will add 1000 sand.
-| Syntax                       | Description                                       |
-| ---------------------------- | ------------------------------------------------- |
-| **scroll wheel**             | zoom in/out                                       |
-| **left ctrl + click + drag** | pan                                               |
-| **s**                        | save sandpile (save in current working directory) |
-| **e**                        | enter normal mode                                 |
+
+| Syntax                       | Description                                        |
+| ---------------------------- | -------------------------------------------------- |
+| **scroll wheel**             | zoom in/out                                        |
+| **left ctrl + click + drag** | pan                                                |
+| **s**                        | save sandpile (saved in current working directory) |
+| **e**                        | enter normal mode                                  |
