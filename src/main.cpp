@@ -12,13 +12,13 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  std::shared_ptr<SDL_Window> window(SDL_CreateWindow(APP_NAME, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, INITIAL_WINDOW_WIDTH, INITIAL_WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE), [](SDL_Renderer *p) { SDL_DestroyWindow(p); });
+  std::shared_ptr<SDL_Window> window(SDL_CreateWindow(APP_NAME, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, INITIAL_WINDOW_WIDTH, INITIAL_WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE), [](auto *p) { SDL_DestroyWindow(p); });
   if(!window){
     std::cout << "Failed to create window: " << SDL_GetError() << "\n";
     return 1;
   }
   
-  std::shared_ptr<SDL_Renderer> renderer(SDL_CreateRenderer(window.get(), -1, 0), [](SDL_Renderer *p) { SDL_DestroyRenderer(p); });
+  std::shared_ptr<SDL_Renderer> renderer(SDL_CreateRenderer(window.get(), -1, 0), [](auto *p) { SDL_DestroyRenderer(p); });
     if(!renderer){
     std::cout << "Failed to create renderer: " << SDL_GetError() << "\n";
     return 1;
