@@ -1,5 +1,7 @@
 #include "pixelWorld.h"
 
+#include <iostream>
+
 PixelWorld::PixelWorld(std::shared_ptr<SDL_Renderer> renderer, int window_width, int window_height, int width, int height) {
   m_x = window_width / 2 - width / 2;
   m_y = window_height / 2 - height / 2;
@@ -68,6 +70,8 @@ bool PixelWorld::save(const std::string &filename) {
   }
 
   unsigned error = lodepng::encode(filename, image, m_width, m_height);
+
+  std::cout << "[SAVING] " << filename << '\n';
 
   if (error) return false;
 

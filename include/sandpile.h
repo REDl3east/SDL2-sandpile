@@ -41,7 +41,7 @@ class Sandpile : public PixelWorld {
   bool pause_render = false;
 
   static constexpr uint8_t colors[5][3] = {{255, 0, 255}, {255, 111, 111}, {54, 200, 25}, {55, 88, 175}, {192, 192, 192}};
-  const std::string save_path = "/home/dalton/Desktop/sandpiles/";
+  const std::string save_path = "./";
 };
 
 #endif

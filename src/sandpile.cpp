@@ -271,7 +271,7 @@ bool Sandpile::save_sandpile() {
   time(&rawtime);
   timeinfo = localtime(&rawtime);
 
-  strftime(buffer, sizeof(buffer), "%d-%m-%Y %H:%M:%S", timeinfo);
+  strftime(buffer, sizeof(buffer), "%d-%m-%Y_%H:%M:%S", timeinfo);
   std::string str(buffer);
   return save(save_path + str + ".png");
 }
