@@ -5,6 +5,16 @@ A multi-threaded sand-pile simulation written in C++, using SDL2.
 - A c++20 compiler (for barrier)
 - SDL2
 
+### Building
+
+``` bash
+mkdir build
+cd build
+cmake ..
+make
+```
+
+
 ### Getting Started
 
 Look at the main.cpp file in the src folder. It does boilerplate SDL initialization and creates the sandpile for you easily. Simply change the global variables to set window and sandpile dimensions. 
