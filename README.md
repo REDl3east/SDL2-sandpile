@@ -2,9 +2,8 @@
 A multi-threaded sand-pile simulation written in C++, using SDL2.
 
 ### Dependancies
-A c++20 compiler (for barrier)
-
-SDL2
+- A c++20 compiler (for barrier)
+- SDL2
 
 ### Getting Started
 
@@ -35,25 +34,18 @@ This will run the simulation with 6 threads. The function 'join' will be called 
 
 ##### The sandpile will render and simulation will run.
 
-**scroll wheel**: zoom in/out
-
-**click + drag**: pan
-
-**p**: pause renderer
-
-**s**: save sandpile (save in current working directory)
-
-**e**: enter edit mode
+**scroll wheel**: zoom in/out \
+**click + drag**: pan \
+**p**: pause renderer \
+**s**: save sandpile (save in current working directory) \
+**e**: enter edit mode \
   
 
 #### Edit Mode
 
 ##### The rendering and simulation will pause and clicking on a cell in the simulation will add 1000 sand.
 
-**scroll wheel**: zoom in/out
-
-**left ctrl + click + drag**: pan
-
-**s**: save sandpile (save in current working directory)
-
-**e**: enter normal mode
+**scroll wheel**: zoom in/out \
+**left ctrl + click + drag**: pan \
+**s**: save sandpile (save in current working directory) \
+**e**: enter normal mode \
